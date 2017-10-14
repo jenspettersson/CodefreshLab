@@ -13,7 +13,10 @@ namespace Labbr.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            for (int i = 0; i < 50; i++)
+            {
+                yield return $"value {i + 1}";
+            }
         }
 
         // GET api/values/5
